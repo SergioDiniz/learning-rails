@@ -1,9 +1,8 @@
-<h1>Bem Vindo!</h1>
-
-<p>
-	Escolha uma das ações a seguir
+<h2>Últimos quartos</h2>
+<div>
 	<ul>
-	    <li><%= link_to "Cadastro", new_user_path %></li>
-	    <li><%= link_to "Quartos", rooms_path %></li>
+		<% @rooms.each do |room| %>
+			<li><%= link_to room.complete_name, room %></li>
+		<% end %>
 	</ul>
-</p>
+</div>

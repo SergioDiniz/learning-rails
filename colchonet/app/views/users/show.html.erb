@@ -1,12 +1,9 @@
-<p id="notice"><%= notice %></p>
-
 <h2>Perfil: <%= @user.full_name %></h2>
 
 <ul>
-	<l1>Localização: <%= @user.location %></l1>
-	<l1>Biografia: <%= @user.bio %></l1>
+	<l1>Localização: <%= @user.location %></l1> <br/>
+	<l1>Biografia: <%= @user.bio %></l1> <br/>
 	<l1>Email: <%= @user.email %></l1>
 </ul>
 
 <%= link_to 'Editar Perfil', edit_user_path(@user) %>
-<%= link_to 'Home', root_path %>
