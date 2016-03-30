@@ -1,11 +1,12 @@
-<h2 style="float:left">Editar Perfil </h2>
+<h2 style="float:left"> <%= t '.title' %> </h2>
+
 <div style="float:left; padding-left: 10px">
-	<br/>
 	(<%= @user.full_name %>)
 </div>
-<br/><br/><br/>
+
+<br/>
 <div>
 	<%= render 'form' %>
 </div>
 
-<%= link_to 'Voltar', @user %>
+<%= link_to t('links.back'), @user %>
