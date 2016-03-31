@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :user_confirmation, only: [:show]
   end
 
+  resource :confirmation, only: [:show]
+
   match ':locale' => 'home#index', locale: LOCALES, via: [:get, :post]
   root 'home#index'
 

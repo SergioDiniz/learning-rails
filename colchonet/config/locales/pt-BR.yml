@@ -10,6 +10,8 @@ pt-BR:
       edit: Editar Perfil
       location: "Localização: %{location}"
       bio: "Biografia: %{bio}"
+    confirmation:
+      success: Email confirmado com SUCESSO, Obrigado!
 
   rooms:
     new:
