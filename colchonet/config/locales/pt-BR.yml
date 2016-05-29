@@ -16,6 +16,16 @@ pt-BR:
   rooms:
     new:
       title: Cadastro
+    index:
+      title: "Quartos Disponiveis!"
+    room:
+      owner_html: '&mdash; %{owner} (%{when})'
+      edit: "Editar"
+      destroy: "Excluir"
+
+  home:
+    index:
+      new_room: "Quartos recem cadastrados"
 
   signup_mailer:
     confirm_email:
@@ -69,6 +79,9 @@ pt-BR:
     my_profile: 'Meu Perfil'
     signout: Sair
 
+  dialogs:
+    destroy: "Você tem certeza que quer excluir?"
+
   activerecord:
     models:
       user: Usuário
@@ -84,4 +97,4 @@ pt-BR:
       room:
         description: Descrição
         location: Localização
-        title: titulo
+        title: Titulo
