@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  #consultas no banco de cados
+  scope :confirmed, -> { where('confirmed_at IS NOT NULL') }
+  #
+
   # attr_accessor :full_name, :email, :password, :location, :bio
 
   validates_presence_of :full_name, :email, :location
@@ -25,5 +29,11 @@ class User < ActiveRecord::Base
 
   def confirmed?
     confirmed_at.present?
+  end
+
+  def self.authenticate(email, password)
+    confirmed.
+      find_by_email(email).
+      try(:authenticate, password)
   end
 end
