@@ -5,17 +5,22 @@ class RoomsController < ApplicationController
   # GET /rooms
   # GET /rooms.json
   def index
-    @rooms = Room.all
+    @rooms = Room.all.map do |room|
+      RoomPresenter.new(room, self, false)
+    end
   end
 
   # GET /rooms/1
   # GET /rooms/1.json
   def show
-    @room = Room.find(params[:id])
+    # @room = Room.find(params[:id])
 
-    if user_signed_in?
-      @user_review = @room.reviews.find_or_initialize_by_user_id(current_user.id)
-    end
+    # if user_signed_in?
+    #   @user_review = @room.reviews.find_or_initialize_by(user_id: current_user.id)
+    # end
+     
+    room_model = Room.find(params[:id])
+    @room = RoomPresenter.new(room_model, self)
 
   end
 
