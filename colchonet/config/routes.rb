@@ -1,14 +1,23 @@
 Rails.application.routes.draw do
-  LOCALES = /en|pt\-BR/ 
+  LOCALES = /en|pt\-BR/
 
   scope '(:locale)', locale: LOCALES do
     resources :rooms
+
+    # sub rota para /rooms/:room_id/reviews, module: :rooms = muda a pasta padrão do controlador, agora vai procura na pasta app/controllers/rooms/
+    resources :rooms do
+      resources :reviews, only: [:create, :update], module: :rooms
+    end
+
     resources :users
 
     resources :user_confirmation, only: [:show]
 
     resource :user_sessions, only: [:create, :new, :destroy]
   end
+
+
+
 
   resource :confirmation, only: [:show]
 

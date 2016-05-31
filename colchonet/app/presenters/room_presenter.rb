@@ -1,0 +1,3 @@
+class RoomPresenter
+	
+end
