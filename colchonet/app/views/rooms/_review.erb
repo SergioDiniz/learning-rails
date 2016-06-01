@@ -1,7 +1,11 @@
 <section class="review">
  	
 	<% if room.show_form? %>
-
 		<%= render partial: 'review_form', locals: {room: room} %>
+	<% else %>
+		<%= t '.status', average: room.stars,
+						 max: room.review_points.max,
+						 count: room.total_reviews
+		 %>
 	<% end %>
 </section>
