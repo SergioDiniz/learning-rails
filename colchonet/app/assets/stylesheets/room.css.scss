@@ -21,7 +21,12 @@
 	padding: 0;
 	float: right;
 	border: none;
+
+	// para as estrelas
+	position: relative;
 }
+
+
 
 .review label{
 	display: inline;
@@ -32,3 +37,32 @@
 	color: #666;
 	font-variant: small-caps;
 }
+
+.review .fa-star{
+	color: gold;
+	text-shadow: 1px 1px #999;
+	&:before {content: "\f005";}
+}
+
+.review .fa-star-o{
+	color: #aaa;
+	&:before {content: "\f006";}
+}
+
+
+
+.review label i.fa {
+  font-size: 18px;
+  text-shadow: 1px 1px #999;
+  cursor:pointer;
+  color: #ccc;
+}
+
+.review label.toggled i{
+	color: gold;
+}
+
+.review form > input{
+	display: none;
+}
+

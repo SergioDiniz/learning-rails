@@ -3,9 +3,15 @@
 	<% if room.show_form? %>
 		<%= render partial: 'review_form', locals: {room: room} %>
 	<% else %>
-		<%= t '.status', average: room.stars,
-						 max: room.review_points.max,
-						 count: room.total_reviews
-		 %>
+
+		<% room.stars.times do %>
+			<i class="fa fa-star" aria-hidden="true"></i>
+		<% end %>
+		
+		<% (room.review_points.max - room.stars).times do %>
+			<i class="fa fa-star-o" aria-hidden="true"></i>
+		<% end %>
+
+		<%= t '.status', count: room.total_reviews %>
 	<% end %>
 </section>

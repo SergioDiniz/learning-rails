@@ -25,9 +25,8 @@ pt-BR:
     review:
       login_to_review: "Faça login para avaliar um quarto."
       status:
-        zero: "Não há avaliações"
-        one: "%{average}/%{max} (1 avaliação)"
-        other: "%{average}/%{max} (%{count} avaliação)"
+        one: "(1 avaliação)"
+        other: "(%{count} avaliação)"
     review_form:
       login_to_review: "Faça login para avalir um quarto."
 
