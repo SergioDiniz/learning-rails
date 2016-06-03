@@ -5,6 +5,10 @@ class RoomsController < ApplicationController
   # GET /rooms
   # GET /rooms.json
   def index
+    @search_query = params[:q]
+
+    @rooms_result = Room.search(@search_query)
+
     @rooms = Room.all.map do |room|
       RoomPresenter.new(room, self, false)
     end

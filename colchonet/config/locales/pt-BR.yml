@@ -18,6 +18,10 @@ pt-BR:
       title: Cadastro
     index:
       title: "Quartos Disponiveis!"
+      search_results: "Resultado da Pesquisa:"
+      search_not_found: "Nenhum resultado encontrado!"
+    search:
+      search_for: "Pesquisar Quarto"
     room:
       owner_html: '&mdash; %{owner} (%{when})'
       edit: "Editar"
