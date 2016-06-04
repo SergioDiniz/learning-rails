@@ -23,7 +23,7 @@ class RoomsController < ApplicationController
     #   @user_review = @room.reviews.find_or_initialize_by(user_id: current_user.id)
     # end
      
-    room_model = Room.find(params[:id])
+    room_model = Room.friendly.find(params[:id])
     @room = RoomPresenter.new(room_model, self)
 
   end
@@ -35,7 +35,7 @@ class RoomsController < ApplicationController
 
   # GET /rooms/1/edit
   def edit
-    @room = current_user.rooms.find(params[:id])
+    @room = current_user.rooms.friendly.find(params[:id])
   end
 
   # POST /rooms
@@ -59,7 +59,7 @@ class RoomsController < ApplicationController
   # PATCH/PUT /rooms/1.json
   def update
 
-    @room = current_user.rooms.find(params[:id])
+    @room = current_user.rooms.friendly.find(params[:id])
 
     respond_to do |format|
       if @room.update(room_params)
@@ -75,7 +75,7 @@ class RoomsController < ApplicationController
   # DELETE /rooms/1
   # DELETE /rooms/1.json
   def destroy
-    @room = current_user.rooms.find(params[:id])
+    @room = current_user.rooms.friendly.find(params[:id])
     @room.destroy
     respond_to do |format|
       format.html { redirect_to rooms_url, notice: 'Room was successfully destroyed.' }
@@ -86,7 +86,7 @@ class RoomsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_room
-      @room = Room.find(params[:id])
+      @room = Room.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
