@@ -4,6 +4,9 @@ class Room < ActiveRecord::Base
   belongs_to :user
   has_many :reviews, dependent: :destroy
 
+  # associar o upload da imagem a quarto
+  mount_uploader :picture, PictureUploader
+
   validates_presence_of :title, :location, :description, :slug
 
   friendly_id :title, use: [:slugged, :history]
@@ -14,9 +17,9 @@ class Room < ActiveRecord::Base
 
   def self.search(query)
   	if query.present?
-  		where(['location LIKE :query OR
-  				title LIKE :query OR
-  				description LIKE :query', query: "%#{query}%"])
+  		where(['location ILIKE :query OR
+  				title ILIKE :query OR
+  				description ILIKE :query', query: "%#{query}%"])
   	else
   		all
   	end

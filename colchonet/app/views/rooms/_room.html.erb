@@ -8,6 +8,7 @@
 	    owner: room.user.full_name,
 	    when: l(room.created_at, format: :short) %>
 	</span>
+	
 	<p>
 	  <span class="location">
 	    <%= link_to highlight(room.location, @search_query), 
@@ -15,12 +16,17 @@
 	      target: :blank %>
 	  </span>
 	</p>
+
+	<div class="room-description">
+		<%= link_to image_tag(room.thumb_url), room.picture_url if room.has_picture? %>
+	</div>
+
 	<p><%= highlight(room.description, @search_query) %></p>
 	
 	<% if belongs_to_user(room) %>
 	  <ul>
 	      <li><%= link_to t('.edit'), edit_room_path(room.route) %></li>
-	      <li><%= link_to t('.destroy'), room_path(room), method: :delete, data: { confirm: t('dialogs.destroy') } %></li>
+	      <li><%= link_to t('.destroy'), room_path(room.route), method: :delete, data: { confirm: t('dialogs.destroy') } %></li>
 	  </ul>
 	<% end %>
 </article>

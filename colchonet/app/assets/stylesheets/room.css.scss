@@ -90,3 +90,15 @@
 	background-color: gold;
 }
 
+.room-description{
+	p, img{
+		float: left;
+		margin-right: 10px;
+	}
+
+	+ ul{
+		padding-top: 10px;
+		clear: both;
+	}
+
+}
