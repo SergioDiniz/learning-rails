@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   # consultas no banco de cados
-  scope :confirmed, -> { where('confirmed_at IS NOT NULL') }
+  # scope :confirmed, -> { where('confirmed_at IS NOT NULL') }
+  scope :confirmed, -> { }
   #
   # Relacionamento com Quartos e análise
   has_many :rooms, dependent: :destroy

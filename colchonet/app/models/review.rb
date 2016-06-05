@@ -7,6 +7,8 @@ class Review < ActiveRecord::Base
   
   # não coloca o attr
   # attr_accessor :points
+  # 
+  
   
   validates_uniqueness_of :user_id, scope: :room_id
   validates_presence_of :user_id, :room_id, :points

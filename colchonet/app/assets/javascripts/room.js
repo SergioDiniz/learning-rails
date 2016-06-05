@@ -47,7 +47,6 @@ $(document).on('ready page:load', function () {
 
 		$('.review input').on('change', function() {
 			$stars.off('mouseenter').off('mouseleave').off('click');
-			console.log(this)
 			$(this).parent('form').submit();
 		});
 	});

@@ -9,12 +9,12 @@
 <%= form_for @session do |f| %> 
 	<p> 
 		<%= f.label :email %> 
-		<%= f.text_field :email %>
+		<%= f.text_field :email, value: "sergio@gmail.com" %>
 		<%= error_tag @session, :email %>
 	</p>
 	<p>
 		<%= f.label :password %>
-		<%= f.password_field :password %>
+		<%= f.password_field :password, value: "123" %>
 		<%= error_tag @session, :password %>
 	</p>
 	<p>
