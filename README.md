@@ -10,5 +10,5 @@ live demo: http://colchoneet.herokuapp.com/
 * App: colchonet
 * Book: Ruby on Rails - coloque sua aplicação web nos trilhos - Casa do Codigo
  
-##Index/Roons:
+##Index/Rooms:
 ![Site](/index.png)
